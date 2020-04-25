@@ -10,4 +10,4 @@ void AppController_run(AppController* _this);
 
 Boolean	AppControlller_inputAndStoreStudents(AppController* _this);
 void	AppController_showStatistics(AppController* _this);
-void	AppController_AppController_showStudentsSortedByScore(AppController* _this);
+void	AppController_showStudentsSortedByScore(AppController* _this);

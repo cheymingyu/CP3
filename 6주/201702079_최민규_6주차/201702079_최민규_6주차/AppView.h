@@ -8,7 +8,9 @@ void	AppView_out_maxScore(int aMaxScore);
 void	AppView_out_minScore(int aMinScore);
 void	AppView_out_gradeCountFor(char aGrade, int aCount);
 
-void	AppView_out_studentInfo(int aScore);
+void	AppView_out_studentInfo(int aScore, char aGrade);
 
 Boolean	AppView_in_doesContinueToInputNextStudent();
 int		AppView_in_score();
+
+char getcharDirectlyFromKeyboard(void);

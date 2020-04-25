@@ -2,11 +2,11 @@
 
 #define DEFAULT_CAPACITY 100
 
-typedef struct {
+struct _Ban{
 	int		_capacity;
 	int		_size;
 	int*	_elements;
-} Ban;
+};
 
 Boolean Ban_scoreIsValid(int aScore) {
 	return (aScore >= 0 && aScore <= 100);
@@ -36,6 +36,7 @@ Ban* Ban_new(void) {
 	_this->_capacity = DEFAULT_CAPACITY;	// 최대 학생 수 설정
 	_this->_size = 0;						// 객체를 생성한 직후의 학생수는 0명
 	_this->_elements = NewVector(int, _this->_capacity);	// 성적을 저장할 배열
+	return _this;
 }
 
 Ban* Ban_newWithCapacity(int givenCapacity) {
@@ -153,4 +154,63 @@ float	Ban_averageScore(Ban* _this) {
 	float average = sumOfScores / (float)_this->_size;
 	return average;
 }
-GradeCounter*	Ban_countGrades(Ban* _this);
+
+int Ban_sumOfScoresRecursively(Ban* _this, int left, int right) {
+	// 성적 합계를 계산하여 return 값으로 돌려준다.
+	if (left > right) {
+		return 0;
+	}
+	else {
+		return (_this->_elements[left] + Ban_sumOfScoresRecursively(_this, left + 1, right));
+	}
+}
+
+int Ban_maxScoreRecursively(Ban* _this, int left, int right) {
+	// 최고점을 찾아서 return 값으로 돌려준다.
+	if (left > right) {
+		return 0;
+	}
+	else {
+		int mid = Ban_partition(_this, left, right);
+		Ban_maxScoreRecursively(_this, mid + 1, right);
+		return _this->_elements[right];
+	}
+}
+
+int Ban_minScoreRecursively(Ban* _this, int left, int right) {
+	// 최저점을 찾아서 return 값으로 돌려준다.
+	if (left > right) {
+		return 0;
+	}
+	else {
+		if (_this->_elements[left] < Ban_maxScoreRecursively(_this, left + 1, right)) {
+			return _this->_elements[left];
+		}
+		else {
+			return Ban_maxScoreRecursively(_this, left + 1, right);
+		}
+	}
+}
+
+int Ban_numberOfStudentsAboveAverage(Ban* _this) {
+	float	average = Ban_averageScore(_this);
+	int		numberOfStudentsAboveAverage = 0;
+
+	for (int i = 0; i < _this->_size; i++) {
+		if ((float)_this->_elements[i] >= average) {
+			numberOfStudentsAboveAverage++;
+		}
+	}
+	return numberOfStudentsAboveAverage;
+}
+
+GradeCounter*	Ban_countGrades(Ban* _this) {
+	char currentGrade;
+	GradeCounter* gradeCounter = GradeCounter_new();
+
+	for (int i = 0; i < _this->_size; i++) {
+		currentGrade = Ban_scoreToGrade(_this->_elements[i]);
+		GradeCounter_count(gradeCounter, currentGrade);
+	}
+	return gradeCounter;
+}

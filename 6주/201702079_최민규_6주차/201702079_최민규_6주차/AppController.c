@@ -4,9 +4,9 @@
 #include "AppView.h"
 #include "GradeCounter.h"
 
-typedef struct {
+struct _AppController{
 	Ban* _ban;
-} AppController;
+};
 
 #define MAX_NUMBER_OF_STUDENTS	100
 
@@ -60,14 +60,17 @@ Boolean	AppControlller_inputAndStoreStudents(AppController* _this) {
 			AppView_out("[오류] 0보다 작거나 100보다 커서, 정상적인 점수가 아닙니다.\n");
 		}
 	}
+	AppView_out("입력을 종료합니다.\n\n");
 	return storingAStudentWasSuccessful;
 }
-void	AppController_showStatistics(AppController* _this) {
+
+void AppController_showStatistics(AppController* _this) {
 	// 이 시점에 성적 처리된 결과를 Ban 객체가 가지고 있다
-	Appview_out_averageScore(Ban_averageScore(_this->_ban));
+	AppView_out_averageScore(Ban_averageScore(_this->_ban));
 	AppView_out_numberOfStudentsAboveAverage(Ban_numberOfStudentsAboveAverage(_this->_ban));
 	AppView_out_maxScore(Ban_maxScore(_this->_ban));
 	AppView_out_minScore(Ban_minScore(_this->_ban));
+	AppView_out("\n");
 
 	// 학점 별 학생수는 Ban 객체로부터 GradeCounter 객체 형태로 얻는다.
 	GradeCounter* gradeCounter = Ban_countGrades(_this->_ban);
@@ -76,9 +79,11 @@ void	AppController_showStatistics(AppController* _this) {
 	AppView_out_gradeCountFor('C', GradeCounter_numberOfC(gradeCounter));
 	AppView_out_gradeCountFor('D', GradeCounter_numberOfD(gradeCounter));
 	AppView_out_gradeCountFor('F', GradeCounter_numberOfF(gradeCounter));
+	AppView_out("\n");
 	GradeCounter_delete(gradeCounter);
 }
-void	AppController_AppController_showStudentsSortedByScore(AppController* _this) {
+
+void AppController_showStudentsSortedByScore(AppController* _this) {
 	AppView_out("학생들의 성적순 목록입니다.\n");
 
 	int		score;
@@ -88,4 +93,5 @@ void	AppController_AppController_showStudentsSortedByScore(AppController* _this)
 		grade = Ban_scoreToGrade(score);
 		AppView_out_studentInfo(score, grade);
 	}
+	AppView_out("\n");
 }
