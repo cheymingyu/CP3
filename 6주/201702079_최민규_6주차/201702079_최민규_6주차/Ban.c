@@ -53,11 +53,11 @@ void Ban_delete(Ban* _this) {
 	free(_this);
 }
 
-int		Ban_capacity(Ban* _this) {
+int	Ban_capacity(Ban* _this) {
 	return (_this->_capacity);
 }
 
-int		Ban_size(Ban* _this) {
+int	Ban_size(Ban* _this) {
 	return (_this->_size);
 }
 
@@ -167,27 +167,36 @@ int Ban_sumOfScoresRecursively(Ban* _this, int left, int right) {
 
 int Ban_maxScoreRecursively(Ban* _this, int left, int right) {
 	// 최고점을 찾아서 return 값으로 돌려준다.
-	if (left > right) {
-		return 0;
+	int maxOfLeftPart;
+	int maxOfRightPart;
+	int mid;
+	if (left == right) {
+		return _this->_elements[left];
 	}
 	else {
-		int mid = Ban_partition(_this, left, right);
-		Ban_maxScoreRecursively(_this, mid + 1, right);
-		return _this->_elements[right];
+		mid = (left + right) / 2;
+		maxOfLeftPart = Ban_maxScoreRecursively(_this, left, mid);
+		maxOfRightPart = Ban_maxScoreRecursively(_this, mid + 1, right);
+		if (maxOfLeftPart >= maxOfRightPart) {
+			return maxOfLeftPart;
+		}
+		else {
+			return maxOfRightPart;
+		}
 	}
 }
 
 int Ban_minScoreRecursively(Ban* _this, int left, int right) {
 	// 최저점을 찾아서 return 값으로 돌려준다.
-	if (left > right) {
-		return 0;
+	if (left == right) {
+		return _this->_elements[left];
 	}
 	else {
-		if (_this->_elements[left] < Ban_maxScoreRecursively(_this, left + 1, right)) {
+		if (_this->_elements[left] < Ban_minScoreRecursively(_this, left + 1, right)) {
 			return _this->_elements[left];
 		}
 		else {
-			return Ban_maxScoreRecursively(_this, left + 1, right);
+			return Ban_minScoreRecursively(_this, left + 1, right);
 		}
 	}
 }

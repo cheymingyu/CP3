@@ -38,16 +38,16 @@ Boolean	AppView_in_doesContinueToInputNextStudent() {
 	return (answer == 'Y' || answer == 'y');
 }
 
-int		AppView_in_score() {
+char getcharDirectlyFromKeyboard(void) {
+	char charFromKeyboard;
+	charFromKeyboard = _getch();
+	return charFromKeyboard;
+}
+
+int	AppView_in_score() {
 	int score;
 
 	printf("- 점수를 입력하시오: ");
 	scanf("%d", &score);
 	return score;
-}
-
-char getcharDirectlyFromKeyboard(void) {
-	char charFromKeyboard;
-	charFromKeyboard = _getch();
-	return charFromKeyboard;
 }
