@@ -39,6 +39,7 @@ Boolean Student_studentIDIsValid(char* aStudentID) {
 	return (length <= MAX_STUDENT_ID_LENGTH);
 	// 학번(문자열)의 길이가 최대 길이인 9보다 짧거나 같아야 한다.
 }
+
 Boolean Student_scoreIsValid(int aScore) {
 	return (aScore >= 0 && aScore <= 100);
 	// 점수가 0과 100사이 이어야 한다.

@@ -16,4 +16,4 @@ Boolean	AppView_in_doesContinueToInputNextStudent();
 int		AppView_in_score();
 void	Appview_in_studentID(char* aStudentID);
 
-char getcharDirectlyFromKeyboard(void);
+char	getcharDirectlyFromKeyboard(void);

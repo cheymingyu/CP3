@@ -24,7 +24,7 @@ GradeCounter*	Ban_countGrades(Ban* _this);
 Boolean Ban_scoreIsValid(int aScore);
 char	Ban_scoreToGrade(int aScore);
 
-void	Ban_quickSortRecursively(Ban* _this, int left, int right);
+void Ban_quickSortRecursively(Ban* _this, int left, int right);
 void Ban_quickSort(Ban* _this);
 int Ban_partition(Ban* _this, int left, int right);
 int Ban_sumOfScoresRecursively(Ban* _this, int left, int right);
