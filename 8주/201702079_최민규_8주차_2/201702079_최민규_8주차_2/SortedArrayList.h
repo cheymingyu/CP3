@@ -13,8 +13,3 @@ Boolean SortedArrayList_add(SortedArrayList* _this, Element anElement);
 Element SortedArrayList_removeMax(SortedArrayList* _this);
 Element SortedArrayList_min(SortedArrayList* _this);
 
-int		SortedArrayList_maxPositionRecursively(SortedArrayList* _this, int left, int right);
-int		SortedArrayList_minPositionRecursively(SortedArrayList* _this, int left, int right);
-int		SortedArrayList_positionUsingBinarySearch(SortedArrayList* _this, Element anElement);
-void	SortedArrayList_addAt(SortedArrayList* _this, Element anElement, int aPosition);
-Element SortedArrayList_removeAt(SortedArrayList* _this, int aPosition);

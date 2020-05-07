@@ -7,6 +7,12 @@ struct _SortedArrayList
 	Element*	_elements;
 };
 
+int		SortedArrayList_maxPositionRecursively(SortedArrayList* _this, int left, int right);
+int		SortedArrayList_minPositionRecursively(SortedArrayList* _this, int left, int right);
+int		SortedArrayList_positionUsingBinarySearch(SortedArrayList* _this, Element anElement);
+void	SortedArrayList_addAt(SortedArrayList* _this, Element anElement, int aPosition);
+Element SortedArrayList_removeAt(SortedArrayList* _this, int aPosition);
+
 SortedArrayList* SortedArrayList_new(int givenCapacity) {
 	SortedArrayList* _this;
 	_this = NewObject(SortedArrayList);
@@ -54,51 +60,16 @@ Boolean SortedArrayList_add(SortedArrayList* _this, Element anElement) {
 Element SortedArrayList_removeMax(SortedArrayList* _this) {
 	int maxPosition;
 	Element max;
-	maxPosition = SortedArrayList_maxPositionRecursively(_this, 0, _this->_size - 1);
-	max = SortedArrayList_removeAt(_this, maxPosition);
+	maxPosition = _this->_size - 1;
+	max = _this->_elements[maxPosition];
+	SortedArrayList_removeAt(_this, maxPosition);
 	return max;
 }
 
 Element SortedArrayList_min(SortedArrayList* _this) {
-	int minPosition;
-	minPosition =
-		SortedArrayList_minPositionRecursively(_this, 0, _this->_size - 1);
-	return _this->_elements[minPosition];
-}
-
-int	SortedArrayList_maxPositionRecursively(SortedArrayList* _this, int left, int right) {
-	if (left == right) {	// data의 크기가 1
-		return left;
-	}
-	else {		// data의 크기가 2 이상
-		int mid = (left + right) / 2;
-		int maxPositionOfLeftPart = SortedArrayList_maxPositionRecursively(_this, left, mid);
-		int maxPositionOfRightPart = SortedArrayList_maxPositionRecursively(_this, mid + 1, right);
-		if (_this->_elements[maxPositionOfLeftPart] >= _this->_elements[maxPositionOfRightPart]) {
-			return maxPositionOfLeftPart;
-		}
-		else {
-			return maxPositionOfRightPart;
-		}
-	}
-}
-
-int SortedArrayList_minPositionRecursively(SortedArrayList* _this, int left, int right) {
-	int minPosition;
-	if (left == right) {
-		return left;
-	}
-	else {
-		int mid = (left + right) / 2;
-		int minPositionOfLeftPart = SortedArrayList_minPositionRecursively(_this, left, mid);
-		int minPositionOfRightPart = SortedArrayList_minPositionRecursively(_this, mid + 1, right);
-		if (_this->_elements[minPositionOfLeftPart] <= _this->_elements[minPositionOfRightPart]) {
-			return minPositionOfLeftPart;
-		}
-		else {
-			return minPositionOfRightPart;
-		}
-	}
+	int min;
+	min = 0;
+	return _this->_elements[min];
 }
 
 int SortedArrayList_positionUsingBinarySearch(
@@ -129,6 +100,7 @@ void SortedArrayList_addAt(
 	_this->_elements[aPosition] = anElement;
 	(_this->_size)++;
 }
+
 Element SortedArrayList_removeAt(SortedArrayList* _this, int aPosition) {
 	Element removedElement = _this->_elements[aPosition];
 	for (int i = (aPosition + 1); i < (_this->_size); i++) {

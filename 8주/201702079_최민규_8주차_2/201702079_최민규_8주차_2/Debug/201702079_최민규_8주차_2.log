@@ -1,3 +1,12 @@
-﻿  AppController.c
+﻿  UnsortedArrayList.c
+d:\study\2020-1학기\컴퓨터 프로그래밍3\8주\201702079_최민규_8주차_2\201702079_최민규_8주차_2\unsortedarraylist.c(66): warning C4013: 'UnsortedArrayList_minPositionRecursively'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+d:\study\2020-1학기\컴퓨터 프로그래밍3\8주\201702079_최민규_8주차_2\201702079_최민규_8주차_2\unsortedarraylist.c(89): warning C4101: 'minPosition' :참조되지 않은 지역 변수입니다.
+  Timer.c
+  SortedArrayList.c
+  ParameterSet.c
+  Main.c
+  AppView.c
+  AppController.c
+  코드를 생성하고 있습니다...
   201702079_최민규_8주차_2.vcxproj -> D:\study\2020-1학기\컴퓨터 프로그래밍3\8주\201702079_최민규_8주차_2\Debug\201702079_최민규_8주차_2.exe
   201702079_최민규_8주차_2.vcxproj -> D:\study\2020-1학기\컴퓨터 프로그래밍3\8주\201702079_최민규_8주차_2\Debug\201702079_최민규_8주차_2.pdb (Full PDB)

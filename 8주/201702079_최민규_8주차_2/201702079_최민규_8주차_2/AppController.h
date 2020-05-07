@@ -10,14 +10,6 @@ void AppController_initPerformanceMeasurement(AppController* _this);
 void AppController_run(AppController* _this);
 void AppController_gernerateTestDataByRandomNumbers(AppController* _this);
 
-double AppController_timeForUnsortedArrayList_add	(AppController* _this, UnsortedArrayList* aList, int aTestSize);
-double AppController_timeForUnsortedArrayList_removeMax	(AppController* _this, UnsortedArrayList* aList, int aTestSize);
-double AppController_timeForUnsortedArrayList_min(	AppController* _this, UnsortedArrayList* aList, int aTestSize);
-
-double AppController_timeForSortedArrayList_add(AppController* _this, SortedArrayList* aList, int aTestSize);
-double AppController_timeForSortedArrayList_removeMax(AppController* _this, SortedArrayList* aList, int aTestSize);
-double AppController_timeForSortedArrayList_min(AppController* _this, SortedArrayList* aList, int aTestSize);
-
-void AppController_showResults
-(AppController* _this, int aTestSize,
-	double aTimeForAdd, double aTimeForMin, double aTimeForRemoveMax);
+double AppController_timeForUnsortedArrayList_add(AppController* _this, UnsortedArrayList* aList, int aTestSize);
+double AppController_timeForUnsortedArrayList_removeMax(AppController* _this, UnsortedArrayList* aList, int aTestSize);
+double AppController_timeForUnsortedArrayList_min(AppController* _this, UnsortedArrayList* aList, int aTestSize);
