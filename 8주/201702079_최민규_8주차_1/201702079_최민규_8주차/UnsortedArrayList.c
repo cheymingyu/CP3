@@ -8,6 +8,9 @@ struct _UnsortedArrayList
 	Element*	_elements;
 };
 
+int UnsortedArrayList_maxPositionRecursively(UnsortedArrayList* _this, int left, int right);
+Element UnsortedArrayList_removeAt(UnsortedArrayList* _this, int aPosition);
+
 UnsortedArrayList* UnsortedArrayList_new(int givenCapacity) {
 	UnsortedArrayList* _this;
 	_this = NewObject(UnsortedArrayList);

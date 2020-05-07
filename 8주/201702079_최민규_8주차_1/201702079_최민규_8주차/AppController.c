@@ -6,14 +6,19 @@
 #include "Timer.h"
 #include <time.h>
 
-#define MIN_TEST_SIZE		1000
+#define MIN_TEST_SIZE		5000
 #define	NUMBER_OF_TESTS		5
-#define INTERVAL_SIZE		1000
+#define INTERVAL_SIZE		5000
 
 struct  _AppController
 {
 	int* _testData;
 };
+
+void AppController_gernerateTestDataByRandomNumbers(AppController* _this);
+double AppController_timeForUnsortedArrayList_add(AppController* _this, UnsortedArrayList* aList, int aTestSize);
+double AppController_timeForUnsortedArrayList_removeMax(AppController* _this, UnsortedArrayList* aList, int aTestSize);
+void AppController_showResults(AppController* _this, int aTestSize,	double aTimeForAdd, double aTimeForRemoveMax);
 
 AppController* AppController_new(void) {
 	AppController* _this = NewObject(AppController);
@@ -56,8 +61,8 @@ void AppController_gernerateTestDataByRandomNumbers(AppController* _this) {
 		_this->_testData[i] = rand();
 	}
 }
-double AppController_timeForUnsortedArrayList_add
-(AppController* _this, UnsortedArrayList* aList, int aTestSize) {
+
+double AppController_timeForUnsortedArrayList_add(AppController* _this, UnsortedArrayList* aList, int aTestSize) {
 	Timer* timer = Timer_new();
 
 	double duration = 0;
@@ -72,8 +77,8 @@ double AppController_timeForUnsortedArrayList_add
 	Timer_delete(timer);
 	return duration;
 }
-double AppController_timeForUnsortedArrayList_removeMax
-(AppController* _this, UnsortedArrayList* aList, int aTestSize) {
+
+double AppController_timeForUnsortedArrayList_removeMax(AppController* _this, UnsortedArrayList* aList, int aTestSize) {
 	Element max;
 	double	duration = 0;
 
@@ -91,12 +96,10 @@ double AppController_timeForUnsortedArrayList_removeMax
 	return duration;
 }
 
-void AppController_showResults
-(AppController* _this, int aTestSize,
-	double aTimeForAdd, double aTimeForRemoveMax) {
+void AppController_showResults(AppController* _this, int aTestSize,	double aTimeForAdd, double aTimeForRemoveMax) {
 	char results[255];
 	sprintf_s(results, sizeof(results),
-		"크기: %4d, 삽입: %6ld, 최대값삭제: %7ld\n",
+		"크기: %5d, 삽입: %6ld, 최대값삭제: %8ld\n",
 		aTestSize, (long)aTimeForAdd, (long)aTimeForRemoveMax);
 	AppView_out(results);
 }
