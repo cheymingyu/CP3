@@ -9,5 +9,5 @@ void	AppView_out_endingMessage();
 void	AppView_out_newLine();
 
 void AppView_out_bottomOfStack();
-void AppView_out_element(char anElement);
+void AppView_out_element(int anElement);
 void AppView_out_topOfStack();

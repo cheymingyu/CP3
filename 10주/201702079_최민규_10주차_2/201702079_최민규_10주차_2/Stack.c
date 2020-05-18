@@ -12,7 +12,7 @@ struct _Stack
 Stack*	Stack_new(int givenCapacity) {
 	Stack*_this;
 	_this = NewObject(Stack);
-	_this->_capacity = givenCapacity;
+	_this->_capacity = DEFAULT_STACK_CAPACITY;
 	_this->_elements = NewVector(Element, givenCapacity);
 	_this->_top = -1;
 	return _this;

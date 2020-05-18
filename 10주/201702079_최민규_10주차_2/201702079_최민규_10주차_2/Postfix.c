@@ -44,6 +44,7 @@ PostfixError Postfix_evaluate(Postfix* _this) {
 			// token is an operand. Push it into stack
 			operand = (currentToken - '0');
 			if (Stack_isFull(_this->_operandStack)) {
+				Postfix_showTokenAndStack(_this, currentToken);
 				return PostfixError_ExpressionTooLong;
 			}
 			else {
@@ -59,6 +60,7 @@ PostfixError Postfix_evaluate(Postfix* _this) {
 					Stack_push(_this->_operandStack, calculated);
 				}
 				else {
+					Postfix_showTokenAndStack(_this, currentToken);
 					return PostfixError_OperandsTooFew;
 				}
 			}
@@ -70,6 +72,7 @@ PostfixError Postfix_evaluate(Postfix* _this) {
 					Stack_push(_this->_operandStack, calculated);
 				}
 				else {
+					Postfix_showTokenAndStack(_this, currentToken);
 					return PostfixError_OperandsTooFew;
 				}
 			}
@@ -81,6 +84,7 @@ PostfixError Postfix_evaluate(Postfix* _this) {
 					Stack_push(_this->_operandStack, calculated);
 				}
 				else {
+					Postfix_showTokenAndStack(_this, currentToken);
 					return PostfixError_OperandsTooFew;
 				}
 			}
@@ -89,12 +93,14 @@ PostfixError Postfix_evaluate(Postfix* _this) {
 					operand2 = Stack_pop(_this->_operandStack);
 					operand1 = Stack_pop(_this->_operandStack);
 					if (operand2 == 0) {
+						Postfix_showTokenAndStack(_this, currentToken);
 						return PostfixError_DivideByZero;
 					}
 					calculated = operand1 / operand2;
 					Stack_push(_this->_operandStack, calculated);
 				}
 				else {
+					Postfix_showTokenAndStack(_this, currentToken);
 					return PostfixError_OperandsTooFew;
 				}
 			}
@@ -103,16 +109,19 @@ PostfixError Postfix_evaluate(Postfix* _this) {
 					operand2 = Stack_pop(_this->_operandStack);
 					operand1 = Stack_pop(_this->_operandStack);
 					if (operand2 == 0) {
+						Postfix_showTokenAndStack(_this, currentToken);
 						return PostfixError_DivideByZero;
 					}
 					calculated = operand1 % operand2;
 					Stack_push(_this->_operandStack, calculated);
 				}
 				else {
+					Postfix_showTokenAndStack(_this, currentToken);
 					return PostfixError_OperandsTooFew;
 				}
 			}
 			else {
+				Postfix_showTokenAndStack(_this, currentToken);
 				return PostfixError_UnknownOperator;
 			}
 		}
