@@ -14,12 +14,10 @@ struct _AppController
 AppController* AppController_new() {
 	AppController* _this;
 	_this = NewObject(AppController);
-	_this->_postfix = Postfix_new(MAX_NUMBER_OF_TOKENS);
 	return _this;
 }
 
 void AppController_delete(AppController* _this) {
-	free(_this->_postfix);
 	free(_this);
 }
 
@@ -40,5 +38,6 @@ void AppController_run(AppController* _this) {
 		}
 		expressionIsAvailable = AppView_in_postfixExpression(_this->_expression);
 	}
+	Postfix_delete(_this->_postfix);
 	AppView_out_endingMessage();
 }

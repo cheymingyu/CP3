@@ -41,7 +41,7 @@ void AppView_out_bottomOfStack() {
 	printf(" <Bottom> ");
 }
 
-void AppView_out_element(char anElement) {
+void AppView_out_element(int anElement) {
 	printf("%d ", anElement);
 }
 
