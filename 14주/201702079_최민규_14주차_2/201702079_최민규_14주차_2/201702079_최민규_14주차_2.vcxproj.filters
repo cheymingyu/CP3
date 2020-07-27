@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Controller">
+      <UniqueIdentifier>{1bd7529a-7f30-486c-87a0-19fe1f1c9afd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\View">
+      <UniqueIdentifier>{2a3dd8df-ec91-48ff-a912-5ce0712fd687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Model">
+      <UniqueIdentifier>{357d7b5a-fe24-42cf-97a7-f15b93e9202e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Model\Dictionary">
+      <UniqueIdentifier>{fe4eb5cb-ff89-4545-b288-72b1ba524bc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Main">
+      <UniqueIdentifier>{739c7f54-ec0a-4689-a1a5-966903421631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Controller">
+      <UniqueIdentifier>{6b61b1b0-ca51-479f-bf42-37c8a5b8827f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\View">
+      <UniqueIdentifier>{0ca93bc9-8fce-4538-95ce-b960f07012c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Model">
+      <UniqueIdentifier>{368d3a28-fcc5-4f66-b162-5bcb49bbfefc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Model\Dictionary">
+      <UniqueIdentifier>{07bfe2d5-66dd-408e-b2a4-bad07d0d9969}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AppController.c">
+      <Filter>소스 파일\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="AppView.c">
+      <Filter>소스 파일\View</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryNode.c">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Key.c">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.c">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="ParameterSet.c">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.c">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearchTreeDictionary.c">
+      <Filter>소스 파일\Model\Dictionary</Filter>
+    </ClCompile>
+    <ClCompile Include="SortedArrayDictionary.c">
+      <Filter>소스 파일\Model\Dictionary</Filter>
+    </ClCompile>
+    <ClCompile Include="SortedLinkedDictionary.c">
+      <Filter>소스 파일\Model\Dictionary</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSortedArrayDictionary.c">
+      <Filter>소스 파일\Model\Dictionary</Filter>
+    </ClCompile>
+    <ClCompile Include="UnSortedLinkedDictionary.c">
+      <Filter>소스 파일\Model\Dictionary</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.c">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.c">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Element.c">
+      <Filter>소스 파일\Model</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppController.h">
+      <Filter>헤더 파일\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="AppView.h">
+      <Filter>헤더 파일\View</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryNode.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Key.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ParameterSet.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="BinarySearchTreeDictionary.h">
+      <Filter>헤더 파일\Model\Dictionary</Filter>
+    </ClInclude>
+    <ClInclude Include="SortedArrayDictionary.h">
+      <Filter>헤더 파일\Model\Dictionary</Filter>
+    </ClInclude>
+    <ClInclude Include="SortedLinkedDictionary.h">
+      <Filter>헤더 파일\Model\Dictionary</Filter>
+    </ClInclude>
+    <ClInclude Include="UnSortedArrayDictionary.h">
+      <Filter>헤더 파일\Model\Dictionary</Filter>
+    </ClInclude>
+    <ClInclude Include="UnSortedLinkedDictionary.h">
+      <Filter>헤더 파일\Model\Dictionary</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Element.h">
+      <Filter>헤더 파일\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Messages.h">
+      <Filter>헤더 파일\View</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

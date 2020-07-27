@@ -1,0 +1,7 @@
+#define MSG_StartPerformanceMeasuring	"< 사전(Dictionary)의 구현에 따른 실행 성능 차이 알아보기 >\n\n"
+#define MSG_EndPerfommanceMeasuring		"\n< Dictionary의 성능 측정을 종료합니다 >\n"
+#define MSG_TitleForUnSortedLinkedDictionary	"[Unsorted Linked Dictionary]\n"
+#define MSG_TitleForSortedLinkedDictionary		"[Sorted Linked Dictionary]\n"
+#define MSG_TitleForUnSortedArrayDictionary		"[Unsorted Array Dictionary]\n"
+#define MSG_TitleForSortedArrayDictionary		"[Sorted Array Dictionary]\n"
+#define MSG_TitleForBinarySearchTreeDictionary	"[Binary Search Tree]\n"
